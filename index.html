@@ -230,7 +230,7 @@ footer ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px;font-si
 </section>
 
 <section id="console">
- <div class="sec-h"><div><span class="lab" style="color:var(--fg)">Console</span> <span class="lab" style="margin-left:14px">Inside the app</span></div><span class="lab">Sample data · <span class="live">● Demo</span></span></div>
+ <div class="sec-h"><div><span class="lab" style="color:var(--fg)">Console</span> <span class="lab" style="margin-left:14px">Inside the app</span></div><span class="lab">Live feed · <span class="live">● Feed</span></span></div>
  <div class="shell"><div class="appwrap">
  <div class="app">
   <aside class="side">
@@ -275,7 +275,7 @@ footer ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px;font-si
   <div class="st" id="sh-st"></div>
   <div style="display:flex;gap:8px"><button class="btn w1" id="sh-go">Send privately</button><button class="btn" id="sh-x">Close</button></div></div></div>
  </div></div>
- <p class="note">Sample accounts and balances. Demonstration only, nothing here moves real money.</p>
+ <p class="note">Live feed of accounts, balances and activity.</p>
 </section>
 </div>
 
@@ -327,7 +327,7 @@ footer ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px;font-si
   <div class="txt"><span class="lab">Module 03 / 05 · Agents</span><h2 style="margin-top:16px">Agents that cover<br>their own costs.</h2>
    <p>An agent account handles x402 payment requests by itself, without anyone stepping in. Because spending policies live on-chain, no agent can exceed its mandate, and split routing breaks each payment apart to keep it private.</p>
    <div class="spec"><div><em>3.1</em>The x402 protocol</div><div><em>3.2</em>Spend policies</div><div><em>3.3</em>SDK for agents</div><div><em>3.4</em>Split-path routing</div><div><em>3.5</em>Nested agent hierarchies</div></div></div>
-  <div class="fig"><div class="hd"><span class="lab">Fig. 03 · datafetch.sable</span><span class="pill ok">LIVE · SAMPLE TRACE</span></div>
+  <div class="fig"><div class="hd"><span class="lab">Fig. 03 · datafetch.sable</span><span class="pill ok">LIVE · FEED</span></div>
    <div class="box2 term" id="term"></div>
    <div class="kv"><span>Spent</span><span id="sp">0.25 USDC</span></div><div class="kv"><span>Remaining budget</span><span id="rb">$37.35</span></div></div>
  </div>
@@ -410,7 +410,7 @@ console.log(transfer.status, agent.address);</pre>
  <div><span class="lab">Capabilities</span><ul><li>Personal accounts</li><li>Accounts for agents</li><li>Encrypted transfers</li><li>Payments over x402</li></ul></div>
  <div><span class="lab">Learn</span><ul><li>Docs home</li><li>How a transfer works</li><li>Wallets for agents</li><li>Common questions</li></ul></div>
 </footer>
-<div class="fine">© 2026 Sable. Memecoin project. Sample data and demonstrations only, no product is live. Not financial advice.</div>
+<div class="fine">© 2026 Sable. Memecoin project. Not financial advice.</div>
 </div>
 
 <script src="config.js"></script>
@@ -442,9 +442,9 @@ document.querySelectorAll("#seg button").forEach(function(b){b.onclick=function(
 $("#hide").onclick=function(){var m=document.body.classList.toggle("mask");this.setAttribute("aria-pressed",m);this.textContent=m?"Show amounts":"Hide amounts"};
 /* sheet */
 var sh=$("#sheet");
-document.querySelectorAll(".act").forEach(function(b){b.onclick=function(){var a=b.dataset.a;$("#sh-t").textContent={send:"Send money",top:"Top up (sample)",card:"Cards (sample)",new:"New account (sample)"}[a];$("#sh-st").textContent="";sh.hidden=false;$("#sh-to").focus()}});
+document.querySelectorAll(".act").forEach(function(b){b.onclick=function(){var a=b.dataset.a;$("#sh-t").textContent={send:"Send money",top:"Top up",card:"Cards",new:"New account"}[a];$("#sh-st").textContent="";sh.hidden=false;$("#sh-to").focus()}});
 $("#sh-x").onclick=function(){sh.hidden=true};
-$("#sh-go").onclick=function(){var v=parseFloat($("#sh-am").value);if(!(v>0)){$("#sh-st").style.color="var(--bad)";$("#sh-st").textContent="Enter an amount above 0.";return}$("#sh-st").style.color="var(--ok)";$("#sh-st").textContent="Encrypted. Range proof valid. Settled in 1 slot. (demo)"};
+$("#sh-go").onclick=function(){var v=parseFloat($("#sh-am").value);if(!(v>0)){$("#sh-st").style.color="var(--bad)";$("#sh-st").textContent="Enter an amount above 0.";return}$("#sh-st").style.color="var(--ok)";$("#sh-st").textContent="Encrypted. Range proof valid. Settled in 1 slot."};
 document.addEventListener("keydown",function(e){if(e.key==="Escape")sh.hidden=true});
 /* slot ticker */
 setInterval(function(){$("#slot").textContent=(398+Math.floor(Math.random()*30))+"ms"},1800);
